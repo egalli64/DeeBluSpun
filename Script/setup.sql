@@ -1,3 +1,4 @@
+DROP TABLE ristoranti;
 create table ristoranti (
 ristoranti_id integer primary key,
 name varchar2(30),
