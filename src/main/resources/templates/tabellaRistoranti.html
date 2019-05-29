@@ -5,9 +5,6 @@
 <title>Tabella Ristoranti</title>
 </head>
 <body>
-<p>
-Restaurants as string: <span th:text=" ${ristoranti}">[]</span>
-</p>
 <p>Restaurants in table</p>
 <table>
 <tr>
@@ -19,7 +16,7 @@ Restaurants as string: <span th:text=" ${ristoranti}">[]</span>
 </tr>
 <tr th:each="cur: ${ristoranti}">
 <td th:text="${cur.id}"></td>
-<td th:text="${cur.nome}"></td>
+<td th:text="${cur.name}"></td>
 <td th:text="${cur.posizione}"></td>
 <td th:text="${cur.specialita}"></td>
 <td th:text="${cur.recensione}"></td>
