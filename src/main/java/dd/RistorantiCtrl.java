@@ -15,7 +15,7 @@ public class RistorantiCtrl {
 	@GetMapping("/tabellaRistoranti")
 	public String regions(Model model) {
 		model.addAttribute("ristoranti", repo.findAll());
-		return "/ristoranti";
+		return "/tabellaRistoranti";
 	}
 }
 
