@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Tabella Ristoranti</title>
+</head>
+<body>
+<p>
+Restaurants as string: <span th:text=" ${restaurants}">[]</span>
+</p>
+<p>Restaurants in table</p>
+<table>
+<tr>
+<th>ID</th>
+<th>NOME</th>
+<th>INDIRIZZO</th>
+<th>SPECIALITA'</th>
+<th>RECENSIONE</th>
+</tr>
+<tr th:each="cur: ${restaurants}">
+<td th:text="${cur.id}"></td>
+<td th:text="${cur.nome}"></td>
+<td th:text="${cur.indirizzo}"></td>
+<td th:text="${cur.specialità}"></td>
+<td th:text="${cur.recensione}"></td>
+</tr>
+</table>
+</body>
+</html>
