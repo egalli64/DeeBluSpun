@@ -1,26 +1,73 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" th:href="@{/css/tablelayout.css}">
 <meta charset="utf-8">
 <title>Tabella Ristoranti</title>
 </head>
 <body>
-<p>Restaurants in table</p>
-<table>
-<tr>
-<th>ID</th>
-<th>NOME</th>
-<th>INDIRIZZO</th>
-<th>SPECIALITA'</th>
-<th>RECENSIONE</th>
-</tr>
-<tr th:each="cur: ${ristoranti}">
-<td th:text="${cur.id}"></td>
-<td th:text="${cur.name}"></td>
-<td th:text="${cur.posizione}"></td>
-<td th:text="${cur.specialita}"></td>
-<td th:text="${cur.recensione}"></td>
-</tr>
-</table>
+
+	<div class="container-fluid">
+		<h1>
+
+			<p class="text-center">
+				DeSpoon <br>
+			</p>
+			<p class="text-center ">I Ristoranti presenti sono:</p>
+		</h1>
+	</div>
+
+	<div class="container-fluid">
+		<table class="table table-hover">
+			<thead class="thead">
+				<tr>
+					<th class="tabletitles">ID</th>
+					<th class="tabletitles">NOME</th>
+					<th class="tabletitles">INDIRIZZO</th>
+					<th class="tabletitles">SPECIALITA'</th>
+					<th class="tabletitles">RECENSIONE</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<tr th:each="cur: ${ristoranti}">
+					<td class="body" th:text="${cur.id}"></td>
+					<td class="body" th:text="${cur.name}"></td>
+					<td class="body" th:text="${cur.posizione}"></td>
+					<td class="body" th:text="${cur.specialita}"></td>
+					<td class="body" th:text="${cur.recensione}"></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div>
+	<form action="setname" method="post">
+		<div>
+			<label for="name">ID Ristorante</label> <input type="text" id="name"
+				name="id_risto">
+		</div>
+		<div>
+			<label for="name">Nome Ristorante</label> <input type="text"
+				id="name" name="name">
+		</div>
+
+		<div>
+			<label for="name">Posizione</label> <input type="text" id="name"
+				name="posizione">
+		</div>
+		<br> <br>
+		<div>
+			<label for="name">Specialità</label> <input type="text" id="name"
+				name="specialita">
+		</div>
+	</form>
+	<button type="button" class="btn btn-outline-primary butt">Inserisci
+	</button>
+	</div>
+	
 </body>
 </html>
