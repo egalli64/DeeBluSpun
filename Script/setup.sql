@@ -1,3 +1,4 @@
+
 DROP TABLE bluristoranti;
 create table bluristoranti (
 ristoranti_id integer primary key,

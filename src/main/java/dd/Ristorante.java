@@ -7,7 +7,7 @@ import javax.persistence.Table;
 
 
 	@Entity
-	@Table(name = "BluRistoranti")
+	@Table(name = "Bluristoranti")
 	public class Ristorante{
 		@Id
 		@Column(name = "ristoranti_id")
