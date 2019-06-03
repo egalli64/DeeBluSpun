@@ -20,14 +20,14 @@ import javax.persistence.Table;
 		private String specialita;
 		@Column(name = "recensione")
 		private String recensione;
-		public Ristorante(int id, String name, String posizione, String specialita, String recensione) {
+		
+		public Ristorante(int id, String name, String posizione, String specialita) {
 			super();
 			this.id = id;
 			this.name = name;
 			this.posizione = posizione;
 			this.specialita = specialita;
-			this.recensione = recensione;
-		}
+			}
 		
 		public Ristorante() {
 			}

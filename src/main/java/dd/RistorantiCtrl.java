@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class RistorantiCtrl {
@@ -19,6 +20,20 @@ public class RistorantiCtrl {
 		model.addAttribute("ristoranti", repo.findAll());
 		return "/tabellaRistoranti";
 	}
+	
+	@GetMapping("/setname")
+	public String aggiungi(
+			@RequestParam(name = "id_risto") int id,
+			@RequestParam(name = "name") String nome,
+			@RequestParam(name = "posizione") String posizione,
+			@RequestParam(name = "specialita") String specialita,
+			Model model) {
+		logger.trace("enter");
+		Ristorante entity= new Ristorante(id, nome, posizione, specialita);
+		repo.save(entity);
+		return "/tabellaRistoranti";
+	}
+	
 }
 
 
