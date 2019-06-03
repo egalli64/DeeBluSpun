@@ -21,7 +21,7 @@ public class RistorantiCtrl {
 		return "/tabellaRistoranti";
 	}
 	
-	@GetMapping("/setname")
+	@GetMapping("/aggiungi")
 	public String aggiungi(
 			@RequestParam(name = "id_risto") int id,
 			@RequestParam(name = "name") String nome,
@@ -31,6 +31,16 @@ public class RistorantiCtrl {
 		logger.trace("enter");
 		Ristorante entity= new Ristorante(id, nome, posizione, specialita);
 		repo.save(entity);
+		model.addAttribute("ristoranti", repo.findAll());
+		return "/tabellaRistoranti";
+	}
+	@GetMapping("/delate")
+	public String aggiungi(
+			@RequestParam(name = "id") int id,
+			Model model) {
+		logger.trace("enter");
+		repo.deleteById(id);
+		model.addAttribute("ristoranti", repo.findAll());
 		return "/tabellaRistoranti";
 	}
 	
