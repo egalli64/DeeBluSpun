@@ -23,28 +23,42 @@
 
 	<div class="container-fluid">
 		<table class="table table-hover">
-			<thead class="thead">
+			<thead id="titolo" class="thead">
 				<tr>
-					<th class="tabletitles">ID</th>
-					<th class="tabletitles">NOME</th>
-					<th class="tabletitles">INDIRIZZO</th>
-					<th class="tabletitles">SPECIALITA'</th>
-					<th class="tabletitles">RECENSIONE</th>
+					<th>ID</th>
+					<th>NOME</th>
+					<th>INDIRIZZO</th>
+					<th>SPECIALITA'</th>
+					<th>RECENSIONE</th>
+					<th>ELIMINA</th>
 				</tr>
 			</thead>
 
 			<tbody>
 				<tr th:each="cur: ${ristoranti}">
-					<td class="body" th:text="${cur.id}"></td>
-					<td class="body" th:text="${cur.name}"></td>
-					<td class="body" th:text="${cur.posizione}"></td>
-					<td class="body" th:text="${cur.specialita}"></td>
-					<td class="body" th:text="${cur.recensione}"></td>
+
+					<td th:text="${cur.id}"></td>
+					<td th:text="${cur.name}"></td>
+					<td th:text="${cur.posizione}"></td>
+					<td th:text="${cur.specialita}"></td>
+					<td th:text="${cur.recensione}"></td>
+					<td>
+						<a th:href="@{/delete(id=${cur.id})}">Elimina</a>
+						<a th:href="@{/update(id=${cur.id})}">Modifica</a>
+					</td>
+
 				</tr>
 			</tbody>
 		</table>
 	</div>
-	
-	
+<br>
+<br>
+<a href="/form.html">
+<input type="button" value= "Inserisci Nuovo Ristorante"></a>
+
+
+
+
+
 </body>
 </html>

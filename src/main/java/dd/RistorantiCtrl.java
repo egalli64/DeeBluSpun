@@ -1,5 +1,7 @@
 package dd;
 
+import java.util.Optional;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,26 +25,57 @@ public class RistorantiCtrl {
 	
 	@GetMapping("/aggiungi")
 	public String aggiungi(
-			@RequestParam(name = "id_risto") int id,
 			@RequestParam(name = "name") String nome,
 			@RequestParam(name = "posizione") String posizione,
 			@RequestParam(name = "specialita") String specialita,
 			Model model) {
 		logger.trace("enter");
-		Ristorante entity= new Ristorante(id, nome, posizione, specialita);
+		Ristorante entity= new Ristorante(nome, posizione, specialita);
 		repo.save(entity);
 		model.addAttribute("ristoranti", repo.findAll());
 		return "/tabellaRistoranti";
 	}
-	@GetMapping("/delate")
-	public String aggiungi(
-			@RequestParam(name = "id") int id,
+	@GetMapping("/delete")
+	public String elimina(
+			@RequestParam int id,
 			Model model) {
-		logger.trace("enter");
+		logger.trace("elimina " + id);
 		repo.deleteById(id);
 		model.addAttribute("ristoranti", repo.findAll());
 		return "/tabellaRistoranti";
 	}
+	
+	@GetMapping("/edit")
+	public String update(
+			@RequestParam(name = "id") int id,
+			@RequestParam(name = "name") String nome,
+			@RequestParam(name = "posizione") String posizione,
+			@RequestParam(name = "specialita") String specialita,
+			@RequestParam(name = "recensione") String recensione,
+			Model model) {
+		Ristorante entity= new Ristorante(id, nome, posizione, specialita, recensione);
+		repo.save(entity);
+		model.addAttribute("ristoranti", repo.findAll());
+		return "/tabellaRistoranti";
+	}
+	
+	@GetMapping("/update")
+	public String edit(
+			@RequestParam(name = "id") int id,
+			Model model) {
+		logger.trace("enter");
+		Optional<Ristorante> r= repo.findById(id);
+		if (r.isPresent()) {
+			model.addAttribute("r", r.get());	
+		}
+		
+		return "/edit";
+	}
+	
+	
+	
+	
+	
 	
 }
 
