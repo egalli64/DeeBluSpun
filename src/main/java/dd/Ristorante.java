@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -23,8 +24,13 @@ import javax.persistence.Table;
 		private String posizione;
 		@Column(name = "specialita")
 		private String specialita;
-						
+		 
 		
+		
+		
+		
+		
+
 		public Ristorante(String name, String posizione, String specialita) {
 			
 			this.name = name;
@@ -67,6 +73,8 @@ import javax.persistence.Table;
 		public void setSpecialita(String specialita) {
 			this.specialita = specialita;
 		}
+		
+	
 		
 	
 }

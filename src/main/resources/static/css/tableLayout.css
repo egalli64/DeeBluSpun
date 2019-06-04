@@ -5,7 +5,7 @@ body {
   background-color: #DCF0F7;
   font-family:Charcoal, sans-serif;
   font-size: 15px;
-}
+ }
 
 h1 {
   font-size: 60px;
@@ -17,3 +17,10 @@ h1 {
 div{ color:  #0C2C52;
 }
 
+.bg{
+	background-image: url("image_debluspoon.jpg");
+	background-repeat: no-repeat;
+	background-size: ; 
+	background-position:center;
+}
+		  
