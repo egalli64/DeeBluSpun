@@ -1,37 +1,47 @@
-	<!DOCTYPE html>
-	<html>
-	<head>
-	<meta name="viewport"
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="stylesheet"
+<link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="/css/tableLayout.css">
+<meta charset="utf-8">
+<title>Inserisci</title>
+</head>
+<body>
 
-	<meta charset="utf-8">
-	<title>Form </title>
-	</head>
-	
-	<div>
+<h1 class="text-center" > DeBluSpoon: NUOVO RISTORANTE </h1>
+
+<br>
+<br>
 	<form action="/aggiungi">
-		
-		<div>
-			<label for="name">Nome Ristorante</label> <input type="text"
-				id="name" name="name">
-		</div>
+		<div class="form-group">
+			<div>
+				<label for="name"><input type="text"
+					class="form-control" id="name" name="name"
+					placeholder="Inserisci nome ristorante">
+				</label>
+			</div>
+			<div>
+				<label for="name"><input type="text"
+					class="form-control" id="name" name="posizione"
+					placeholder="Inserisci posizione ristorante">
+				</label>
+			</div>
+			<div>
+				<label for="name"><input type="text"
+					class="form-control" id="name" name="specialita"
+					placeholder="Inserisci specialità">
+				</label>
 
-		<div>
-			<label for="name">Posizione</label> <input type="text" id="name"
-				name="posizione">
+			</div>
+
 		</div>
-		<br> <br>
-		<div>
-			<label for="name">Specialità</label> <input type="text" id="name"
-				name="specialita">
-		</div>
-		
-		<button type="submit">Inserisci nuovo ristorante </button>
+		<button type="submit" class="btn btn-primary">Inserisci Nuovo Ristorante</button>
 	</form>
-	
-	
-	</div>
-	
-	</html>
+
+</body>
+
+
+</html>

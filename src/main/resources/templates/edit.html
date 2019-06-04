@@ -1,48 +1,55 @@
 <!DOCTYPE html>
-	<html xmlns:th="http://www.thymeleaf.org">
-	<head>
-	<meta name="viewport"
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="stylesheet"
+<link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-	
-	<meta charset="utf-8">
-	<title>Form </title>
-	</head>
-	
-	<div>
-	<form action="/edit">
-	
-		<div>
-			<label for="name">ID Ristorante da modificare</label> <input type="text"
-				id="name" name="id" th:value="${r.id}" readonly>
-		</div>
-		
-		<div>
-			<label for="name">Nuovo Nome Ristorante</label> <input type="text"
-				id="name" name="name" th:value="${r.name}">
-		</div>
+<link rel="stylesheet" type="text/css" th:href="@{/css/tableLayout.css}">
+<meta charset="utf-8">
+<title>Form</title>
+</head>
 
-		<div>
-			<label for="name">Nuova Posizione</label> <input type="text" id="name"
-				name="posizione" th:value="${r.posizione}">
-		</div>
-		<br> <br>
-		<div>
-			<label for="name">Nuova Specialità</label> <input type="text" id="name"
-				name="specialita" th:value="${r.specialita}">
-		</div>
-		
-		<div>
-			<label for="name">Recensione</label> <input type="text" id="name"
-				name="recensione" th:value="${r.recensione}" readonly>
-		</div>
-		
-		<button type="submit"> Modifica ristorante</button>
+<body>
+
+<h1 class="text-center" > DeBluSpoon: MODIFICA RISTORANTE </h1>
+
+<form action="/edit">
+	<div class="form-group">
+		<small id="id" class="form-text text-muted">Stai modificando </small>	
+		<input type="text" id="name" name="id" th:value="'Id: ' +  ${r.id}" readonly class="form-control-plaintext"> 
 	
-	</form>
+	
+	<br>
+	<div class="cointainer-fluid ">
+		<div>
+			<label for="name">Modifica Nome
+			<input type="text" class="form-control" id="name" name="name" th:placeholder="${r.name}">
+			</label> 
+		</div>
+		<div>
+			<label for="name">Modifica Posizione
+			<input type="text" class="form-control" id="name" name="posizione" th:placeholder="${r.posizione}">
+			</label> 
+		</div>
+		<div>
+			<label for="name">Modifica Specialità
+			<input type="text" class="form-control" id="name" name="specialita" th:placeholder="${r.specialita}">
+			</label> 
+			
+		</div>
+		<div>
+			<label for="name">Recensione
+			<input type="text" id="name" name="recensione" th:placeholder="${r.recensione}" readonly class="form-control-plaintext">
+			</label> 
+		</div>
+	</div>
+	<button type="submit" class="btn btn-primary">Submit</button>	
 	</div>
 	
-	
-	
-	</html>
+</form>
+
+
+</body>
+
+</html>
