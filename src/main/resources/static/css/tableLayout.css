@@ -1,3 +1,18 @@
 @charset "utf-8";
-.text-center{color:blue};
-#titolo{color:blue};
+
+body {
+  margin: 25px;
+  background-color: #DCF0F7;
+  font-family:Charcoal, sans-serif;
+  font-size: 15px;
+}
+
+h1 {
+  font-size: 60px;
+  font-weight: normal;
+  font-family:impact, Charcoal, sans-serif;
+  margin-top: 5px;
+}
+
+div{ color:  #0C2C52;}
+
