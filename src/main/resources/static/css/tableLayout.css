@@ -14,13 +14,17 @@ h1 {
   margin-top: 5px;
 }
 
-div{ color:  #0C2C52;
+h2{ color:  white;
 }
 
+h1{
+	color: darkblue
+}
 .bg{
 	background-image: url("image_debluspoon.jpg");
 	background-repeat: no-repeat;
-	background-size: ; 
-	background-position:center;
 }
-		  
+
+.buttons{
+	text-align: right;
+}	  
