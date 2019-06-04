@@ -6,8 +6,7 @@ create table bluristoranti (
 ristoranti_id integer primary key,
 name varchar2(30),
 posizione varchar2(30),
-specialita varchar2(10),
-recensione integer);
+specialita varchar2(10));
 
 
 
@@ -29,4 +28,14 @@ create table blurecensioni (
 recensioni_id integer primary key,
 ristoranti_id integer constraint recensioni_ristoranti_id_fk references bluristoranti(ristoranti_id) on delete cascade,
 stelle integer constraint recensioni_stelle_ck check (stelle between 1 and 5));
+
+
+INSERT INTO blurecensioni(recensioni_id ,ristoranti_id, stelle)
+values (recensioni_SEQ.nextval, 1, 4);
+INSERT INTO blurecensioni(recensioni_id, ristoranti_id, stelle)
+values (recensioni_SEQ.nextval, 2, 5);
+INSERT INTO blurecensioni(recensioni_id, ristoranti_id, stelle)
+values (recensioni_SEQ.nextval, 3, 3);
+INSERT INTO blurecensioni(recensioni_id, ristoranti_id, stelle)
+values (recensioni_SEQ.nextval, 4, 1);
 
