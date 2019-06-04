@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -17,18 +19,16 @@ import javax.persistence.Table;
 		@SequenceGenerator(sequenceName="RECENSIONI_SEQ", allocationSize=1, name="RecGen")
 		@Column(name = "recensioni_id")
 		private int id_rec;
-		@Column(name = "ristoranti_id")
-		private int id_rest;
+		@ManyToOne
+		@JoinColumn(name = "ristoranti_id")
+		private Ristorante risto;
 		@Column(name = "stelle")
 		private int stelle;
 		@Column(name = "utenti_id")
 		private int id_ute;
 		
-		
-		
-		
-		public Recensione(int id_rest, int stelle, int id_ute) {
-			this.id_rest = id_rest;
+		public Recensione(Ristorante ristor, int stelle, int id_ute) {
+			this.risto=ristor;
 			this.stelle = stelle;
 			this.id_ute = id_ute;
 		}
@@ -42,12 +42,7 @@ import javax.persistence.Table;
 		public void setId_rec(int id_rec) {
 			this.id_rec = id_rec;
 		}
-		public int getId_rest() {
-			return id_rest;
-		}
-		public void setId_rest(int id_rest) {
-			this.id_rest = id_rest;
-		}
+		
 		public int getStelle() {
 			return stelle;
 		}
@@ -61,6 +56,13 @@ import javax.persistence.Table;
 			this.id_ute = id_ute;
 		}
 		
+		public Ristorante getRisto() {
+			return risto;
+		}
+
+		public void setRisto(Ristorante risto) {
+			this.risto = risto;
+		}
 		
 	}
 	

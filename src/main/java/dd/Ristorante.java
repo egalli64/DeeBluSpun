@@ -68,9 +68,7 @@ import javax.persistence.Table;
 			this.specialita = specialita;
 		}
 		
-		
-		
-		
+	
 }
 
 	

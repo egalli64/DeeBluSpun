@@ -23,7 +23,7 @@
 			<thead id="titolo" class="thead">
 				<tr>
 					<th>ID RECENSIONE</th>
-					<th>ID RISTORANTE</th>
+					<th> RISTORANTE</th>
 					<th>STELLE</th>
 					<th>ID UTENTE</th>
 				</tr>
@@ -33,7 +33,7 @@
 				<tr th:each="cur: ${recensioni}">
 
 					<td th:text="${cur.id_rec}"></td>
-					<td th:text="${cur.id_rest}"></td>
+					<td th:text="${cur.risto.name}"></td>
 					<td th:text="${cur.stelle}"></td>
 					<td th:text="${cur.id_ute}"></td>
 										
