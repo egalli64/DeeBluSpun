@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" th:href="@{/css/tableLayout.css}">
+<meta charset="utf-8">
+<title>Tabella Recensioni</title>
+</head>
+<body>
+
+	<div class="container-fluid">
+		<h1 class="text-center ">
+
+			Le recensioni presenti sono:
+		</h1>
+	</div>
+
+	<div class="container-fluid">
+		<table class="table table-hover">
+			<thead id="titolo" class="thead">
+				<tr>
+					<th>ID RECENSIONE</th>
+					<th>ID RISTORANTE</th>
+					<th>STELLE</th>
+					<th>ID UTENTE</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<tr th:each="cur: ${recensioni}">
+
+					<td th:text="${cur.id_rec}"></td>
+					<td th:text="${cur.id_rest}"></td>
+					<td th:text="${cur.stelle}"></td>
+					<td th:text="${cur.id_ute}"></td>
+										
+				</tr>
+			</tbody>
+		</table>
+	</div>
+<br>
+<br>
+<a class="btn btn-outline-primary btn-lg" href="/formRecensione.html" role="button"> Inserisci Nuova Recensione</a>
+
+
+
+
+
+
+</body>
+</html>
