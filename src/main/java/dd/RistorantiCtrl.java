@@ -51,9 +51,8 @@ public class RistorantiCtrl {
 			@RequestParam(name = "name") String nome,
 			@RequestParam(name = "posizione") String posizione,
 			@RequestParam(name = "specialita") String specialita,
-			@RequestParam(name = "recensione") String recensione,
 			Model model) {
-		Ristorante entity= new Ristorante(id, nome, posizione, specialita, recensione);
+		Ristorante entity= new Ristorante(id, nome, posizione, specialita);
 		repo.save(entity);
 		model.addAttribute("ristoranti", repo.findAll());
 		return "/tabellaRistoranti";

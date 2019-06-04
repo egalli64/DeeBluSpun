@@ -38,7 +38,7 @@
 					<td th:text="${cur.name}"></td>
 					<td th:text="${cur.posizione}"></td>
 					<td th:text="${cur.specialita}"></td>
-					<td th:text="${cur.recensione}"></td>
+					<td th:text="recensione"></td>
 					<td>
 						<a th:href="@{/delete(id=${cur.id})}">Elimina</a>
 						<a th:href="@{/update(id=${cur.id})}">Modifica</a>

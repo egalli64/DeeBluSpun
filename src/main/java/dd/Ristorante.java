@@ -23,10 +23,7 @@ import javax.persistence.Table;
 		private String posizione;
 		@Column(name = "specialita")
 		private String specialita;
-		@Column(name = "recensione")
-		private String recensione;
-		
-				
+						
 		
 		public Ristorante(String name, String posizione, String specialita) {
 			
@@ -35,13 +32,12 @@ import javax.persistence.Table;
 			this.specialita = specialita;
 			}
 		
-		public Ristorante(int id, String name, String posizione, String specialita, String recensione) {
+		public Ristorante(int id, String name, String posizione, String specialita) {
 			
 			this.id=id;
 			this.name = name;
 			this.posizione = posizione;
 			this.specialita = specialita;
-			this.recensione= recensione;
 			}
 		
 		public Ristorante() {
@@ -71,12 +67,7 @@ import javax.persistence.Table;
 		public void setSpecialita(String specialita) {
 			this.specialita = specialita;
 		}
-		public String getRecensione() {
-			return recensione;
-		}
-		public void setRecensione(String recensione) {
-			this.recensione = recensione;
-		}
+		
 		
 		
 		
