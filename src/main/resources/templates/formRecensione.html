@@ -11,30 +11,26 @@
 </head>
 <body>
 
-<h1 class="text-center" > DeBluSpoon: NUOVA RECENSIONE </h1>
-
-<br>
-<br>
+	<h1 class="text-center">DeBluSpoon: NUOVA RECENSIONE</h1>
+	<br>
+	<br>
 	<form action="/aggiungiRecensione">
 		<div class="form-group">
 			<div>
-				<label for="name"><input type="text"
-					class="form-control" id="id_utente" name="id_utente"
-					placeholder="Inserisci l'utente">
+				<label for="name"><input type="text" class="form-control"
+					id="id_utente" name="id_utente" placeholder="Inserisci l'utente">
 				</label>
 			</div>
 			<div>
-				<label for="name"><input type="text"
-					class="form-control" id="id_rest" name="id"
-					placeholder="Inserisci Id Ristorante da recensire">
-				</label>
+				<select name=id>
+					<option th:each="cur: ${ristoranti}" th:value="${cur.id}"
+						th:text="${cur.name}"></option>
+				</select>
 			</div>
 			<div>
-				<label for="name"><input type="text"
-					class="form-control" id="stelle" name="stelle"
-					placeholder="Inserisci N° Stelle da 1 a 5">
-				</label>
-
+				<label for="name"><input type="text" class="form-control"
+					id="stelle" name="stelle"
+					placeholder="Inserisci N° Stelle da 1 a 5"> </label>
 			</div>
 
 		</div>
@@ -42,6 +38,8 @@
 	</form>
 
 </body>
+
+
 
 
 </html>

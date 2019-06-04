@@ -20,10 +20,17 @@ public class RecensioniCtrl {
 	RistorantiRepo reporic;
 
 	@GetMapping("/tabellaRecensioni")
-	public String ristoranti(Model model) {
+	public String recensione(Model model) {
 		logger.trace("enter");
 		model.addAttribute("recensioni", reporec.findAll());
 		return "/tabellaRecensioni";
+	}
+	
+	@GetMapping("/formRecensione")
+	public String formrec(Model model) {
+		logger.trace("enter");
+		model.addAttribute("ristoranti", reporic.findAll());
+		return "/formRecensione";
 	}
 	
 	@GetMapping("/aggiungiRecensione")
@@ -43,4 +50,6 @@ public class RecensioniCtrl {
 		}
 		return "/tabellaRecensioni";
 	}
+	
+	
 }
