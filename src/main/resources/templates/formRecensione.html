@@ -32,9 +32,10 @@
 		onsubmit="return controlloSt();">
 		<div class="form-group">
 			<div>
-				<label for="name"><input type="text" class="form-control"
-					id="id_utente" name="id_utente" placeholder="Inserisci l'utente">
-				</label>
+				<select name=id_utente>
+					<option th:each="cur: ${utente}" th:value="${cur.id}"
+						th:text="|${cur.name} ${cur.cognome}"></option>
+				</select>
 			</div>
 			<div>
 				<select name=id>

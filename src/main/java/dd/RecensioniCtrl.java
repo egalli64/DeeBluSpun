@@ -32,6 +32,7 @@ public class RecensioniCtrl {
 	public String formrec(Model model) {
 		logger.trace("enter");
 		model.addAttribute("ristoranti", reporic.findAll());
+		model.addAttribute("utente", repous.findAll());
 		return "/formRecensione";
 	}
 	
