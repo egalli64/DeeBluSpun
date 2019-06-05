@@ -67,9 +67,8 @@ public class UtentiCtrl {
 		logger.trace("enter");
 		Optional<Utente> u= repo.findById(id);
 		if (u.isPresent()) {
-			model.addAttribute("u", u.get());	
+			model.addAttribute("u", u.get());		
 		}
-		
 		return "/editUtente";
 	}
 	
@@ -78,6 +77,7 @@ public class UtentiCtrl {
 			Model model) {
 		logger.trace("enter");
 		model.addAttribute("u", reporec.findByUse_id(id));
+		model.addAttribute("utenteId", id);
 
 		return "/rec_ute";
 	}

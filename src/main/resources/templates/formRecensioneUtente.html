@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="/css/tableLayout.css">
+<meta charset="utf-8">
+<title>Inserisci Recensione</title>
+</head>
+<body>
+
+	<h1 class="text-center">DeBluSpoon: NUOVA RECENSIONE</h1>
+	
+	<nav class="navbar navbar-expand navbar-light">
+			<div class="collapse navbar-collapse" id="navbarText">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active"><a class="nav-link" href="/index.html">HOME
+							<span class="sr-only">(current)</span>
+					</a></li>
+					<li class="nav-item"><a class="nav-link" href="/tabellaRecensioni">RECENSIONI</a></li>
+					<li class="nav-item"><a class="nav-link" href="/tabellaRistoranti">RISTORANTI</a></li>
+					<li class="nav-item"><a class="nav-link" href="/tabellaUtenti">UTENTI</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	<br>
+	<br>
+	<form action="/aggiungiRecensione" name="form"
+		onsubmit="return controlloSt();">
+		<div class="form-group">
+			<input type="hidden" id="name" name="id_utente" th:value="${id}">
+			<div>
+				<select name=id>
+					<option th:each="cur: ${ristoranti}" th:value="${cur.id}"
+						th:text="${cur.name}"></option>
+				</select>
+			</div>
+			<div>
+				<label for="name"><input type="text" class="form-control"
+					id="stelle" name="stelle"
+					placeholder="Inserisci N° Stelle da 1 a 5"> </label>
+			</div>
+
+		</div>
+		<button type="submit" class="btn btn-primary">Inserisci Nuova
+			Recensione</button>
+	</form>
+
+</body>
+
+<script type="text/javascript">
+	function controlloSt() {
+		let stelle = parseInt(document.form.stelle.value);
+		if (isNaN(stelle)) {
+			alert("Non è un numero");
+			document.form.stelle.focus();
+			return false;
+		} else if ((stelle < 1) || (stelle > 5)) {
+			alert("Inserire un numero tra 1 e 5!!");
+			document.form.stelle.focus();
+			return false;
+		} else {
+			return true;
+		}
+	}
+</script>
+
+
+
+</html>

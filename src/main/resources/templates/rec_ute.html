@@ -30,6 +30,8 @@
 				</ul>
 			</div>
 		</nav>
+		
+
 	<div class="container-fluid">
 		<table class="table table-hover">
 			<thead id="titolo" class="thead">
@@ -46,6 +48,7 @@
 					<td th:text="${cur.risto.name}"></td>
 										
 				</tr>
+				
 			</tbody>
 		</table>
 	</div>
@@ -53,7 +56,7 @@
 <br>
 
 
-
+<a class="btn btn-outline-primary btn-lg" th:href="@{/formRecensioneUtente(id=${utenteId})}" role="button"> Inserisci Nuova Recensione</a>
 
 
 

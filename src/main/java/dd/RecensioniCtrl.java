@@ -56,4 +56,14 @@ public class RecensioniCtrl {
 		return "/tabellaRecensioni";
 	}
 	
+	@GetMapping("/formRecensioneUtente")
+	public String formrecut(			
+			@RequestParam(name = "id") int id,
+			Model model) {
+		logger.trace("enter");
+		model.addAttribute("ristoranti", reporic.findAll());
+		model.addAttribute("id", id);
+		return "/formRecensioneUtente";
+	}
+	
 }
