@@ -25,7 +25,7 @@
 					<th>ID RECENSIONE</th>
 					<th> RISTORANTE</th>
 					<th>STELLE</th>
-					<th>ID UTENTE</th>
+					<th>UTENTE</th>
 				</tr>
 			</thead>
 
@@ -35,7 +35,7 @@
 					<td th:text="${cur.id_rec}"></td>
 					<td th:text="${cur.risto.name}"></td>
 					<td th:text="${cur.stelle}"></td>
-					<td th:text="${cur.id_ute}"></td>
+					<td th:text="|${cur.use.name} ${cur.use.cognome}|"></td>
 										
 				</tr>
 			</tbody>

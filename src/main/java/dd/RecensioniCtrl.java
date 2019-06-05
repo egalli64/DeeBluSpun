@@ -18,6 +18,8 @@ public class RecensioniCtrl {
 	RecensioniRepo reporec;
 	@Autowired
 	RistorantiRepo reporic;
+	@Autowired
+	UtentiRepo repous;
 
 	@GetMapping("/tabellaRecensioni")
 	public String recensione(Model model) {
@@ -43,7 +45,9 @@ public class RecensioniCtrl {
 		Optional<Ristorante> r= reporic.findById(id);
 		if (r.isPresent()) {
 			Ristorante cur=r.get();
-			Recensione entity= new Recensione(cur, stelle, id_utente);
+			Optional<Utente> u= repous.findById(id_utente);
+			Utente user = u.get();
+			Recensione entity= new Recensione(cur, stelle,user);
 			logger.trace("entity");
 			reporec.save(entity);
 			model.addAttribute("recensioni", reporec.findAll());	
