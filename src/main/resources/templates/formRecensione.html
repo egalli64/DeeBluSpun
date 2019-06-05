@@ -14,7 +14,8 @@
 	<h1 class="text-center">DeBluSpoon: NUOVA RECENSIONE</h1>
 	<br>
 	<br>
-	<form action="/aggiungiRecensione">
+	<form action="/aggiungiRecensione" name="form"
+		onsubmit="return controlloSt();">
 		<div class="form-group">
 			<div>
 				<label for="name"><input type="text" class="form-control"
@@ -34,11 +35,28 @@
 			</div>
 
 		</div>
-		<button type="submit" class="btn btn-primary">Inserisci Nuova Recensione</button>
+		<button type="submit" class="btn btn-primary">Inserisci Nuova
+			Recensione</button>
 	</form>
 
 </body>
 
+<script type="text/javascript">
+	function controlloSt() {
+		let stelle = parseInt(document.form.stelle.value);
+		if (isNaN(stelle)) {
+			alert("Non è un numero");
+			document.form.stelle.focus();
+			return false;
+		} else if ((stelle < 1) || (stelle > 5)) {
+			alert("Inserire un numero tra 1 e 5!!");
+			document.form.stelle.focus();
+			return false;
+		} else {
+			return true;
+		}
+	}
+</script>
 
 
 

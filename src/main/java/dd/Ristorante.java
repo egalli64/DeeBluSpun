@@ -25,11 +25,6 @@ import javax.persistence.Table;
 		@Column(name = "specialita")
 		private String specialita;
 		 
-		
-		
-		
-		
-		
 
 		public Ristorante(String name, String posizione, String specialita) {
 			

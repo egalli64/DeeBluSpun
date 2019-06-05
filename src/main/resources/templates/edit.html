@@ -12,38 +12,52 @@
 
 <body>
 
-<h1 class="text-center" > DeBluSpoon: MODIFICA RISTORANTE </h1>
+	<h1 class="text-center">DeBluSpoon: MODIFICA RISTORANTE</h1>
 
-<form action="/edit">
-	<div class="form-group">
-		<small id="id" class="form-text text-muted">Stai modificando </small>	
-		<input type="text" id="name" name="id" th:value="'Id: ' +  ${r.id}" readonly class="form-control-plaintext"> 
-	
-	
-	<br>
-	<div class="cointainer-fluid ">
-		<div>
-			<label for="name">Modifica Nome
-			<input type="text" class="form-control" id="name" name="name" th:placeholder="${r.name}">
-			</label> 
+	<nav class="navbar navbar-expand navbar-light">
+		<div class="collapse navbar-collapse" id="navbarText">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item active"><a class="nav-link" href="#">HOME
+						<span class="sr-only">(current)</span>
+				</a></li>
+				<li class="nav-item"><a class="nav-link" href="#">RISTORANTI</a></li>
+				<li class="nav-item"><a class="nav-link" href="#">UTENTI</a></li>
+				<li class="nav-item"><a class="nav-link" href="#">RECENSIONI</a>
+				</li>
+			</ul>
 		</div>
-		<div>
-			<label for="name">Modifica Posizione
-			<input type="text" class="form-control" id="name" name="posizione" th:placeholder="${r.posizione}">
-			</label> 
+	</nav>
+	<form action="/edit">
+		<div class="form-group">
+			<small id="id" class="form-text text-muted">Stai modificando
+			</small> <input type="text" id="name" name="id" th:value="'Id: ' +  ${r.id}"
+				readonly class="form-control-plaintext"> <br>
+			<div class="cointainer-fluid ">
+				<div>
+					<label for="name">Modifica Nome <input type="text"
+						class="form-control" id="name" name="name"
+						th:placeholder="${r.name}">
+					</label>
+				</div>
+				<div>
+					<label for="name">Modifica Posizione <input type="text"
+						class="form-control" id="name" name="posizione"
+						th:placeholder="${r.posizione}">
+					</label>
+				</div>
+				<div>
+					<label for="name">Modifica Specialità <input type="text"
+						class="form-control" id="name" name="specialita"
+						th:placeholder="${r.specialita}">
+					</label>
+
+				</div>
+
+			</div>
+			<button type="submit" class="btn btn-primary">Submit</button>
 		</div>
-		<div>
-			<label for="name">Modifica Specialità
-			<input type="text" class="form-control" id="name" name="specialita" th:placeholder="${r.specialita}">
-			</label> 
-			
-		</div>
-		
-	</div>
-	<button type="submit" class="btn btn-primary">Submit</button>	
-	</div>
-	
-</form>
+
+	</form>
 
 
 </body>
