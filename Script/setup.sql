@@ -2,9 +2,10 @@ drop sequence RISTORANTI_SEQ;
 drop sequence RECENSIONI_SEQ;
 DROP SEQUENCE utenti_seq;
 
+drop table blurecensioni;
 DROP TABLE bluristoranti;
 DROP TABLE bluutenti;
-drop table blurecensioni;
+
 create sequence RISTORANTI_SEQ;
 create sequence RECENSIONI_SEQ;
 CREATE SEQUENCE utenti_seq;
