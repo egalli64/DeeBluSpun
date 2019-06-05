@@ -16,6 +16,8 @@ public class UtentiCtrl {
 	private static final Logger logger = LoggerFactory.getLogger(UtentiCtrl.class);
 	@Autowired
 	UtentiRepo repo;
+	@Autowired
+	RecensioniRepo reporec;
 
 	@GetMapping("/tabellaUtenti")
 	public String utenti(Model model) {
@@ -25,23 +27,23 @@ public class UtentiCtrl {
 	}
 	
 	@GetMapping("/aggiungiUtente")
-	public String aggiungi(
+	public String aggiungiUtente(
 			@RequestParam(name = "name") String nome,
 			@RequestParam(name = "cognome") String cognome,
 			Model model) {
-		logger.trace("enter");
 		Utente entity= new Utente(nome, cognome);
 		repo.save(entity);
-		model.addAttribute("utenti", repo.findAll());
+		model.addAttribute("utente", repo.findAll());
 		return "/tabellaUtenti";
 	}
+	
 	@GetMapping("/deleteUtente")
 	public String elimina(
 			@RequestParam int id,
 			Model model) {
 		logger.trace("elimina " + id);
 		repo.deleteById(id);
-		model.addAttribute("utenti", repo.findAll());
+		model.addAttribute("utente", repo.findAll());
 		return "/tabellaUtenti";
 	}
 	
@@ -54,7 +56,7 @@ public class UtentiCtrl {
 			Model model) {
 		Utente entity= new Utente(id, nome, cognome);
 		repo.save(entity);
-		model.addAttribute("utenti", repo.findAll());
+		model.addAttribute("utente", repo.findAll());
 		return "/tabellaUtenti";
 	}
 	
@@ -71,6 +73,14 @@ public class UtentiCtrl {
 		return "/editUtente";
 	}
 	
+	@GetMapping("/visualizzaUten")
+	public String visua(@RequestParam(name = "id") int id, 
+			Model model) {
+		logger.trace("enter");
+		model.addAttribute("u", reporec.findByUse_id(id));
+
+		return "/rec_ute";
+	}
 	
 	
 }

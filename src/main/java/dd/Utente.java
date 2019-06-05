@@ -21,18 +21,13 @@ public class Utente {
 	@Column(name = "utenti_cognome")
 	private String cognome;
 	
-	
-	
-	
 	public Utente(int id, String name, String cognome) {
-		super();
 		this.id = id;
 		this.name = name;
 		this.cognome = cognome;
 	}
 
 	public Utente(String name, String cognome) {
-		super();
 		this.name = name;
 		this.cognome = cognome;
 	}
@@ -68,11 +63,6 @@ public class Utente {
 	public void setCognome(String cognome) {
 		this.cognome = cognome;
 	}
-	
-	
-	
-	
-	
 	
 	
 }

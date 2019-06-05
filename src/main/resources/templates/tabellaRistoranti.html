@@ -34,7 +34,7 @@
 		<table class="table table-hover">
 			<thead id="titolo" class="thead">
 				<tr>
-					<th>ID</th>
+					
 					<th>NOME</th>
 					<th>INDIRIZZO</th>
 					<th>SPECIALITA'</th>
@@ -46,11 +46,12 @@
 			<tbody>
 				<tr th:each="cur: ${ristoranti}">
 
-					<td th:text="${cur.id}"></td>
+					
 					<td th:text="${cur.name}"></td>
 					<td th:text="${cur.posizione}"></td>
 					<td th:text="${cur.specialita}"></td>
-					<td th:text="recensione"></td>
+					<td>
+					<a th:href="@{/visualizzaRec(id=${cur.id})}">Visualizza</a></td>
 					<td>
 						<a th:href="@{/delete(id=${cur.id})}">Elimina</a>
 						<a th:href="@{/update(id=${cur.id})}">Modifica</a>

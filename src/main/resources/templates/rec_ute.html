@@ -7,15 +7,17 @@
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" th:href="@{/css/tableLayout.css}">
 <meta charset="utf-8">
-<title>Form</title>
+<title>Recensioni Utente</title>
 </head>
-
 <body>
 
-	<h1 class="text-center">DeBluSpoon: MODIFICA RISTORANTE</h1>
+	<div class="container-fluid">
+		<h1 class="text-center ">
 
-
-	<nav class="navbar navbar-expand navbar-light">
+			Le recensioni di questo utente sono:
+		</h1>
+	</div>
+<nav class="navbar navbar-expand navbar-light">
 			<div class="collapse navbar-collapse" id="navbarText">
 				<ul class="navbar-nav mr-auto">
 					<li class="nav-item active"><a class="nav-link" href="/index.html">HOME
@@ -28,31 +30,33 @@
 				</ul>
 			</div>
 		</nav>
-	<form action="/editUtente">
-		<div class="form-group">
-			<input type="hidden"id="name" name="id" th:value="${u.id}">
-			<div class="cointainer-fluid ">
-				<div>
-				
-					<label for="name">Modifica Nome <input type="text"
-						class="form-control" id="name" name="name"
-						th:placeholder="${u.name}">
-					</label>
-				</div>
-				<div>
-					<label for="name">Modifica Cognome <input type="text"
-						class="form-control" id="name" name="cognome"
-						th:placeholder="${u.cognome}">
-					</label>
-				</div>
-				
-			</div>
-			<button type="submit" class="btn btn-primary">Submit</button>
-		</div>
+	<div class="container-fluid">
+		<table class="table table-hover">
+			<thead id="titolo" class="thead">
+				<tr>
+					<th>STELLE </th>
+					<th>NOME RISTORANTE</th>
+				</tr>
+			</thead>
 
-	</form>
+			<tbody>
+				<tr th:each="cur: ${u}">
+
+					<td th:text="${cur.stelle}"></td>
+					<td th:text="${cur.risto.name}"></td>
+										
+				</tr>
+			</tbody>
+		</table>
+	</div>
+<br>
+<br>
+
+
+
+
+
 
 
 </body>
-
 </html>

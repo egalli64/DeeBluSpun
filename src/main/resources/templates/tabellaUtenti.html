@@ -36,7 +36,9 @@
 				<tr>
 					<th>NOME</th>
 					<th>COGNOME</th>
+					<th>VISUALIZZA</th>
 					<th>ELIMINA</th>
+					
 				</tr>
 			</thead>
 
@@ -45,7 +47,12 @@
 
 					<td th:text="${cur.name}"></td>
 					<td th:text="${cur.cognome}"></td>
-					
+					<td>
+						<a th:href="@{/visualizzaUten(id=${cur.id})}">Visualizza</a>
+					<td>
+						<a th:href="@{/deleteUtente(id=${cur.id})}">Elimina</a>
+						<a th:href="@{/updateUtente(id=${cur.id})}">Modifica</a>
+					</td>
 
 				</tr>
 			</tbody>

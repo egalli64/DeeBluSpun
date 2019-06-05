@@ -55,5 +55,4 @@ public class RecensioniCtrl {
 		return "/tabellaRecensioni";
 	}
 	
-	
 }
