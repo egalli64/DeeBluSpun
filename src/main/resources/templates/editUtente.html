@@ -7,16 +7,14 @@
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" th:href="@{/css/tableLayout.css}">
 <meta charset="utf-8">
-<title>Tabella Ristoranti</title>
+<title>Form</title>
 </head>
+
 <body>
 
-	<div class="container-fluid">
-		<h1 class="text-center ">
+	<h1 class="text-center">DeBluSpoon: MODIFICA RISTORANTE</h1>
 
-			I Ristoranti presenti sono:
-		</h1>
-	</div>
+
 	<nav class="navbar navbar-expand navbar-light">
 			<div class="collapse navbar-collapse" id="navbarText">
 				<ul class="navbar-nav mr-auto">
@@ -30,44 +28,32 @@
 				</ul>
 			</div>
 		</nav>
-	<div class="container-fluid">
-		<table class="table table-hover">
-			<thead id="titolo" class="thead">
-				<tr>
-					<th>ID</th>
-					<th>NOME</th>
-					<th>INDIRIZZO</th>
-					<th>SPECIALITA'</th>
-					<th>RECENSIONE</th>
-					<th>ELIMINA</th>
-				</tr>
-			</thead>
+	<form action="/editUtente">
+		<div class="form-group">
+			<small id="id" class="form-text text-muted">Stai modificando
+			</small> <input type="text" id="name" name="id" th:value="${u.id}"
+				readonly class="form-control-plaintext"> <br>
+			<div class="cointainer-fluid ">
+				<div>
+					<label for="name">Modifica Nome <input type="text"
+						class="form-control" id="name" name="name"
+						th:placeholder="${u.name}">
+					</label>
+				</div>
+				<div>
+					<label for="name">Modifica Cognome <input type="text"
+						class="form-control" id="name" name="cognome"
+						th:placeholder="${u.cognome}">
+					</label>
+				</div>
+				
+			</div>
+			<button type="submit" class="btn btn-primary">Submit</button>
+		</div>
 
-			<tbody>
-				<tr th:each="cur: ${ristoranti}">
-
-					<td th:text="${cur.id}"></td>
-					<td th:text="${cur.name}"></td>
-					<td th:text="${cur.posizione}"></td>
-					<td th:text="${cur.specialita}"></td>
-					<td th:text="recensione"></td>
-					<td>
-						<a th:href="@{/delete(id=${cur.id})}">Elimina</a>
-						<a th:href="@{/update(id=${cur.id})}">Modifica</a>
-					</td>
-
-				</tr>
-			</tbody>
-		</table>
-	</div>
-<br>
-<br>
-<a class="btn btn-outline-primary btn-lg" href="/form.html" role="button"> Inserisci Nuovo Ristorante</a>
-
-
-
-
+	</form>
 
 
 </body>
+
 </html>

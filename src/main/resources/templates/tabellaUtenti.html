@@ -7,14 +7,14 @@
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" th:href="@{/css/tableLayout.css}">
 <meta charset="utf-8">
-<title>Tabella Ristoranti</title>
+<title>Tabella Utenti</title>
 </head>
 <body>
 
 	<div class="container-fluid">
 		<h1 class="text-center ">
 
-			I Ristoranti presenti sono:
+			Gli utenti presenti sono:
 		</h1>
 	</div>
 	<nav class="navbar navbar-expand navbar-light">
@@ -34,27 +34,18 @@
 		<table class="table table-hover">
 			<thead id="titolo" class="thead">
 				<tr>
-					<th>ID</th>
 					<th>NOME</th>
-					<th>INDIRIZZO</th>
-					<th>SPECIALITA'</th>
-					<th>RECENSIONE</th>
+					<th>COGNOME</th>
 					<th>ELIMINA</th>
 				</tr>
 			</thead>
 
 			<tbody>
-				<tr th:each="cur: ${ristoranti}">
+				<tr th:each="cur: ${utente}">
 
-					<td th:text="${cur.id}"></td>
 					<td th:text="${cur.name}"></td>
-					<td th:text="${cur.posizione}"></td>
-					<td th:text="${cur.specialita}"></td>
-					<td th:text="recensione"></td>
-					<td>
-						<a th:href="@{/delete(id=${cur.id})}">Elimina</a>
-						<a th:href="@{/update(id=${cur.id})}">Modifica</a>
-					</td>
+					<td th:text="${cur.cognome}"></td>
+					
 
 				</tr>
 			</tbody>
@@ -62,12 +53,4 @@
 	</div>
 <br>
 <br>
-<a class="btn btn-outline-primary btn-lg" href="/form.html" role="button"> Inserisci Nuovo Ristorante</a>
-
-
-
-
-
-
-</body>
-</html>
+<a class="btn btn-outline-primary btn-lg" href="/formUtenti.html" role="button"> Inserisci Nuovo Utente</a>

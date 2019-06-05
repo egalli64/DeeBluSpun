@@ -14,23 +14,24 @@
 
 	<h1 class="text-center">DeBluSpoon: MODIFICA RISTORANTE</h1>
 
+
 	<nav class="navbar navbar-expand navbar-light">
-		<div class="collapse navbar-collapse" id="navbarText">
-			<ul class="navbar-nav mr-auto">
-				<li class="nav-item active"><a class="nav-link" href="#">HOME
-						<span class="sr-only">(current)</span>
-				</a></li>
-				<li class="nav-item"><a class="nav-link" href="#">RISTORANTI</a></li>
-				<li class="nav-item"><a class="nav-link" href="#">UTENTI</a></li>
-				<li class="nav-item"><a class="nav-link" href="#">RECENSIONI</a>
-				</li>
-			</ul>
-		</div>
-	</nav>
+			<div class="collapse navbar-collapse" id="navbarText">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active"><a class="nav-link" href="/index.html">HOME
+							<span class="sr-only">(current)</span>
+					</a></li>
+					<li class="nav-item"><a class="nav-link" href="/tabellaRecensioni">RECENSIONI</a></li>
+					<li class="nav-item"><a class="nav-link" href="/tabellaRistoranti">RISTORANTI</a></li>
+					<li class="nav-item"><a class="nav-link" href="/tabellaUtenti">UTENTI</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
 	<form action="/edit">
 		<div class="form-group">
 			<small id="id" class="form-text text-muted">Stai modificando
-			</small> <input type="text" id="name" name="id" th:value="'Id: ' +  ${r.id}"
+			</small> <input type="text" id="name" name="id" th:value="${r.id}"
 				readonly class="form-control-plaintext"> <br>
 			<div class="cointainer-fluid ">
 				<div>
